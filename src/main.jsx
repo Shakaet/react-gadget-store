@@ -10,6 +10,8 @@ import Home from './Component/Home';
 import Statistics from './Component/Statistics';
 import Dashboard from './Component/Dashboard';
 import Gadget from './Component/gadget';
+import Specificpages from './Component/Specific';
+import Specific from './Component/Specific';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,11 @@ const router = createBrowserRouter([
         
 
 
+      },
+      {
+        path:"/item/:id",
+        element:<Specific></Specific>,
+        loader:(()=>fetch("/data.json"))
       },
       {
         path:"/satistics",
