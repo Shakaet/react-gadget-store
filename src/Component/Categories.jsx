@@ -11,7 +11,7 @@ const Categories = ({category}) => {
         <div>
 
 <div role="tablist" className="tabs tabs-lifted flex flex-col gap-5">
-    <NavLink className={({ isActive }) =>
+    <NavLink to={``} className={({ isActive }) =>
             `tab text-2xl font-thin ${isActive ? 'tab-active' : ''}`
           }>All</NavLink>
 {category.map(category => (
