@@ -1,9 +1,11 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useOutletContext, useParams } from 'react-router-dom';
 import { FaShoppingCart } from "react-icons/fa";
 import { AddToLocalStorage, AddToLocalStorageW } from './AddToDb';
 
 const Specific = () => {
+
+
     let {id}=useParams()
     console.log(id)
     let data= useLoaderData()

@@ -5,12 +5,12 @@ import { FaShoppingCart } from "react-icons/fa";
 const NavBar = () => {
 
     let location=useLocation()
-    let home=location.pathname
+    const isHome = location.pathname === "/";
     return (
         <div>
 
 
-<div className={`navbar bg-base-100 ${home==="/" ?"bg-[#9538E2] text-[white]":""}`}>
+<div className={`navbar bg-base-100  ${isHome ? "bg-purple-700 text-white" : ""}`}>
   <div className="navbar-start">
     <h2 className='font-bold'>Gadget Heaven</h2>
   </div>
