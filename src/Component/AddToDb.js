@@ -56,4 +56,4 @@ let AddToLocalStorageW=(id)=>{
 
 
 
-export {AddToLocalStorage,AddToLocalStorageW,getItemFromLs}
+export {AddToLocalStorage,AddToLocalStorageW,getItemFromLs,getItemFromLsW}

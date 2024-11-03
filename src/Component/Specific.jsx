@@ -5,6 +5,8 @@ import { AddToLocalStorage, AddToLocalStorageW } from './AddToDb';
 
 const Specific = () => {
 
+    const { handleAddToCart, handleAddToWishlist } = useOutletContext();
+
 
     let {id}=useParams()
     console.log(id)
@@ -14,12 +16,14 @@ const Specific = () => {
     let gadget=data.find(item=>item.product_id=== parseInt(id))
     console.log(gadget)
 
-    let handleCart=(id)=>{
-        AddToLocalStorage(id)
-    }
-    let handleWishlist=(id)=>{
-        AddToLocalStorageW(id)
-    }
+    // let handleCart=(id)=>{
+    //     AddToLocalStorage(id)
+    //     incrementCart()
+    // }
+    // let handleWishlist=(id)=>{
+    //     AddToLocalStorageW(id)
+    //     incrementWishlist()
+    // }
 
     
     return (
@@ -93,10 +97,10 @@ const Specific = () => {
 
           {/* Buttons */}
           <div className="flex space-x-4 gap-10">
-            <button onClick={()=>handleCart(gadget.product_id)} className=" text-xl  py-2 rounded-full bg-gray-200 font-bold flex items-center gap-2 shadow-lg p-5 hover:bg-red-400">
+            <button onClick={()=>handleAddToCart(gadget.product_id)} className=" text-xl  py-2 rounded-full bg-gray-200 font-bold flex items-center gap-2 shadow-lg p-5 hover:bg-red-400">
             Add to Cart<FaShoppingCart />
             </button>
-            <button onClick={()=>handleWishlist(gadget.product_id)} className="bg-gray-200 p-2 rounded-full  hover:bg-red-400">
+            <button onClick={()=>handleAddToWishlist(gadget.product_id)} className="bg-gray-200 p-2 rounded-full  hover:bg-red-400">
               <svg
                 className="w-6 h-6 text-gray-600"
                 fill="currentColor"

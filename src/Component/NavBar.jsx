@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaShoppingCart } from "react-icons/fa";
 
-const NavBar = () => {
+const NavBar = ({ cartCount, wishlistCount }) => {
 
     let location=useLocation()
     const isHome = location.pathname === "/";
@@ -25,7 +25,7 @@ const NavBar = () => {
     <FaShoppingCart /> 
   </button>
   <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-    1
+    {cartCount}
   </span>
 </div>
 
@@ -40,7 +40,7 @@ const NavBar = () => {
               </svg>
 
               <span className="absolute -top-4 -right-3 bg-red-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-    1
+    {wishlistCount}
   </span>
         
        
