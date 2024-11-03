@@ -7,7 +7,7 @@ const Main = () => {
     return (
         <div className='overflow-x-hidden'>
 
-            <NavBar></NavBar>
+            <NavBar ></NavBar>
             <Outlet></Outlet>
 
             <Footer></Footer>
