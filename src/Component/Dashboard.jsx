@@ -4,8 +4,10 @@ import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import { getItemFromLs, getItemFromLsW } from './AddToDb';
 import Cart from './Cart';
 import Datawish from './Datawish'
+import Modal from './Modal';
  
 const Dashboard = () => {
+    let [showModal, setShowModal] = useState(false); // Modal visibility state
 
     let [price,setPrice]=useState(0)
 
@@ -45,12 +47,21 @@ const Dashboard = () => {
 
     }
 
+
+    const handlePurchase = () => {
+        setShowModal(true); // Show the modal
+    };
+
     
 
     return (
         <div>
+              {/* Modal */}
+              {showModal && <Modal onClose={() => setShowModal(false)} totalPrice={price} />}
+            
 
             <div className=''>
+               
 
             <div className="hero bg-[#9538E2] min-h-screen relative ">
             <div className="hero-content text-center">
@@ -82,7 +93,7 @@ const Dashboard = () => {
            <p className='text-2xl font-bold'>Total Cost: ${price}</p>
             
             <button onClick={sortByPriceDescending} className='btn btn-outline bg-gray-300 font-bold'>Sort by Price</button>
-            <button className='btn  bg-blue-600 font-bold'>Purchase</button>
+            <button onClick={handlePurchase} className='btn  bg-blue-600 font-bold'>Purchase</button>
 
         </div>
       </div>
