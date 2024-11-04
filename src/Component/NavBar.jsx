@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { FaShoppingCart } from "react-icons/fa";

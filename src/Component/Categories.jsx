@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { NavLink, useNavigation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const Categories = ({category}) => {
