@@ -1,11 +1,23 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaShoppingCart } from "react-icons/fa";
 
 const NavBar = ({ cartCount, wishlistCount }) => {
+    let link= useNavigate()
 
     let location=useLocation()
     const isHome = location.pathname === "/";
+
+
+
+    let cart=()=>{
+        link("/dashboard")
+
+    }
+    let wishList=()=>{
+        link("/dashboard")
+
+    }
     return (
         <div>
 
@@ -16,12 +28,12 @@ const NavBar = ({ cartCount, wishlistCount }) => {
   </div>
   <div className="navbar-center">
     <Link to="/" className="btn btn-ghost text-xl">Home</Link>
-    <a className="btn btn-ghost text-xl">Statistics</a>
-    <a className="btn btn-ghost text-xl">DashBoard</a>
+    <Link className="btn btn-ghost text-xl">Statistics</Link>
+    <Link to="/dashboard" className="btn btn-ghost text-xl">DashBoard</Link>
   </div>
   <div className="navbar-end">
   <div className="relative inline-block">
-  <button className="btn btn-ghost btn-circle text-2xl">
+  <button onClick={cart} className="btn btn-ghost btn-circle text-2xl">
     <FaShoppingCart /> 
   </button>
   <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
@@ -29,7 +41,7 @@ const NavBar = ({ cartCount, wishlistCount }) => {
   </span>
 </div>
 
-    <button className="btn btn-ghost btn-circle">
+    <button onClick={wishList} className="btn btn-ghost btn-circle">
       <div className="indicator">
       <svg
                 className="w-6 h-6 text-gray-600"
