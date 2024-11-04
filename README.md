@@ -5,7 +5,7 @@
 
 # List of React Fundamental concepts used in the project
 
-1. Components: The project is divided into reusable components, such as product cards, modals, and 2.navigation bars, to keep the code organized and modular.
+1. Components: The project is divided into reusable components, such as product cards, modals, and navigation bars, to keep the code organized and modular.
 2. State Management: State is used to handle real-time data changes, like adding products to the reading list or wishlist.
 3. Props: Props are passed down from parent to child components to manage the flow of data, such as passing product information to display in each product card.
 4. Event Handling: Event handlers (e.g., button clicks) are used to manage user interactions, like adding items to local storage.
