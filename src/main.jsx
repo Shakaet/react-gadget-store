@@ -11,11 +11,13 @@ import Statistics from './Component/Statistics';
 import Dashboard from './Component/Dashboard';
 import Gadget from './Component/gadget';
 import Specific from './Component/Specific';
+import ErrorPages from './Component/ErrorPages';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPages></ErrorPages>,
     children:[
       {
         path:"/",

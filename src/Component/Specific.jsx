@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLoaderData, useOutletContext, useParams } from 'react-router-dom';
 import { FaShoppingCart } from "react-icons/fa";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Specific = () => {
     const { handleAddToCart, handleAddToWishlist } = useOutletContext();
@@ -18,16 +20,21 @@ const Specific = () => {
     const addToWishlist = () => {
         handleAddToWishlist(gadget.product_id);
         setIsWishlisted(true); // Disable wishlist button after adding
+        toast.success("Item added to Wishlist!"); // Display wishlist message
     };
 
     // Function to handle adding item to the cart
     const addToCart = () => {
         handleAddToCart(gadget.product_id);
         setIsAddedToCart(true); // Disable cart button after adding
+        toast.info("Item added to Cart!"); // Display cart message
     };
 
     return (
         <div>
+            {/* Toast container to display notifications */}
+            <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
+
             <div className='relative'>
                 <div className="hero bg-[#9538E2] min-h-screen">
                     <div className="hero-content text-center">
