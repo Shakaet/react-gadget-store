@@ -23,7 +23,7 @@ const Footer = () => {
                             <li><a href="#" className="hover:underline text-[#09080F99] font-bold">Product Support</a></li>
                             <li><a href="#" className="hover:underline text-[#09080F99] font-bold">Order Tracking</a></li>
                             <li><a href="#" className="hover:underline text-[#09080F99] font-bold">Shipping & Delivery</a></li>
-                            <li><a href="#" className="hover:underline">Returns</a></li>
+                            <li><a href="#" className="hover:underline text-[#09080F99] font-bold">Returns</a></li>
                         </ul>
                     </div>
                     <div className="">
