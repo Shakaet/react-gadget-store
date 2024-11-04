@@ -86,13 +86,14 @@ const Dashboard = () => {
                 </TabList>
 
                 <TabPanel>
-                    <div className="flex justify-between items-center">
+                    <div className="md:flex justify-between items-center">
                         <div>
                             <h2 className="text-2xl font-bold">Cart</h2>
                         </div>
-                        <div className="flex gap-10 justify-center items-center">
+                        <div className="md:flex gap-10 justify-center items-center">
                             <p className="text-2xl font-bold">Total Cost: ${price}</p>
-                            <button onClick={sortByPriceDescending} className="btn btn-outline bg-gray-300 font-bold">Sort by Price</button>
+                           
+                           <button onClick={sortByPriceDescending} className="btn btn-outline bg-gray-300 font-bold">Sort by Price</button> <br />
                             <button
                                 onClick={handlePurchase}
                                 className={`btn bg-blue-600 font-bold ${price === 0 ? 'cursor-not-allowed opacity-50' : ''}`}
@@ -100,6 +101,7 @@ const Dashboard = () => {
                             >
                                 Purchase
                             </button>
+                          
                         </div>
                     </div>
 
