@@ -45,6 +45,9 @@ const NavBar = ({ cartCount, wishlistCount }) => {
                 >
                     Dashboard
                 </NavLink>
+                <NavLink to="/contact" className={({ isActive }) => `btn btn-ghost text-xl font-bold ${isActive ? "font-extrabold text-yellow-500" : ""}`}>
+                    Contact Us
+                </NavLink>
             </div>
             <div className="navbar-end flex flex-col md:flex-row gap-3 items-center mt-3 md:mt-0">
                 <div className="relative inline-block">

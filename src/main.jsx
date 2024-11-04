@@ -12,6 +12,7 @@ import Dashboard from './Component/Dashboard';
 import Gadget from './Component/gadget';
 import Specific from './Component/Specific';
 import ErrorPages from './Component/ErrorPages';
+import ContactUs from './Component/ContactUs';
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
         element:<Dashboard></Dashboard>,
         loader:(()=>fetch("/data.json"))
 
+
+      },
+      {
+        path:"/contact",
+        element:<ContactUs></ContactUs>,
 
       }
 

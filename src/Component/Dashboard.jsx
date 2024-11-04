@@ -7,12 +7,16 @@ import Datawish from './Datawish';
 import Modal from './Modal';
 
 const Dashboard = () => {
-    const [showModal, setShowModal] = useState(false); // Modal visibility state
+
+    useEffect(() => {
+        document.title = "Dashboard | Gadget Heaven"; 
+      }, []);
+    const [showModal, setShowModal] = useState(false); 
     const { resetCounts } = useOutletContext();
-    const navigate = useNavigate(); // For redirecting to homepage
+    const navigate = useNavigate(); 
 
     const [price, setPrice] = useState(0);
-    const [originalPrice, setOriginalPrice] = useState(0); // Keep track of original total cost
+    const [originalPrice, setOriginalPrice] = useState(0); 
     const [data, setData] = useState([]);
     const [wishList, setWishlist] = useState([]);
 
