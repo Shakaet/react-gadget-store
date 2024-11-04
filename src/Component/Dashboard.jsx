@@ -32,6 +32,12 @@ const Dashboard = () => {
       setPrice(totalCost);
     },[])
 
+    const sortByPriceDescending = () => {
+        const sortedData = [...data].sort((a, b) => b.price - a.price);
+        setData(sortedData);
+
+    }
+
     
 
     return (
@@ -68,7 +74,7 @@ const Dashboard = () => {
         
            <p className='text-2xl font-bold'>Total Cost: ${price}</p>
             
-            <button className='btn btn-outline bg-gray-300 font-bold'>Sort by Price</button>
+            <button onClick={sortByPriceDescending} className='btn btn-outline bg-gray-300 font-bold'>Sort by Price</button>
             <button className='btn  bg-blue-600 font-bold'>Purchase</button>
 
         </div>
