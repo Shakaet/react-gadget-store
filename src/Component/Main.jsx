@@ -38,7 +38,9 @@ const Main = () => {
     return (
         <div className='overflow-x-hidden'>
 
-            <NavBar cartCount={cartCount} wishlistCount={wishlistCount}></NavBar>
+           
+           <NavBar cartCount={cartCount} wishlistCount={wishlistCount}></NavBar>
+          
             <Outlet context={{ handleAddToCart, handleAddToWishlist, resetCounts }} ></Outlet>
 
             <Footer></Footer>
