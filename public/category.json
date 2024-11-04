@@ -1,6 +1,6 @@
 [
     {
-      "product_id": "C1",
+      
       "category": "Computers"
       
     },
@@ -8,25 +8,25 @@
   
    
     {
-      "product_id": "P1",
+      
       "category": "Phones"
       
     },
     
     {
-      "product_id": "W1",
+      
       "category": "Smart Watches"
       
     },
    
     {
-      "product_id": "CH1",
+      
      
       "category": "Chargers"
     },
   
     {
-      "product_id": "PB1",
+      
       
       "category": "Power Banks"
     }
