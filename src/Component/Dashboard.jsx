@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useOutletContext, useNavigate } from 'react-router-dom';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import { getItemFromLs, getItemFromLsW } from './AddToDb';
+import { getItemFromLs, getItemFromLsW, RemoveFromLS } from './AddToDb';
 import Cart from './Cart';
 import Datawish from './Datawish';
 import Modal from './Modal';
@@ -47,16 +47,28 @@ const Dashboard = () => {
     };
 
     const handlePurchase = () => {
-        setShowModal(true); // Show the modal
-        setPrice(0); // Set total price to 0 on the screen
-        setData([]); // Clear cart items
+        setShowModal(true); 
+        setPrice(0); 
+        setData([]); 
     };
 
-    // Close modal, reset counts, and navigate to home
+    const handleRemove = (id) => {
+        RemoveFromLS(id);
+        const updatedData = getItemFromLs().map(id => 
+            Ls_data.find(item => item.product_id === id)
+        ).filter(Boolean);
+        setData(updatedData);
+
+         // Calculate new total price
+    const newTotalPrice = updatedData.reduce((acc, item) => acc + item.price, 0);
+    setPrice(newTotalPrice); 
+    };
+
+    
     const handleCloseModal = () => {
         setShowModal(false);
-        resetCounts(); // Reset counts in the parent component
-        navigate('/'); // Redirect to home page
+        resetCounts(); 
+        navigate('/'); 
     };
 
     return (
@@ -105,7 +117,7 @@ const Dashboard = () => {
                         </div>
                     </div>
 
-                    {data.map(cart => <Cart key={cart.product_id} cart={cart} />)}
+                    {data.map(cart => <Cart key={cart.product_id} cart={cart} handleRemove={handleRemove} />)}
                 </TabPanel>
 
                 <TabPanel>

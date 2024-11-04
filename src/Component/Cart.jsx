@@ -2,7 +2,10 @@
 import React from 'react';
 import { ImCross } from "react-icons/im";
 
-const Cart = ({cart}) => {
+const Cart = ({cart,handleRemove}) => {
+
+
+    
     return (
         <div>
 
@@ -26,7 +29,7 @@ const Cart = ({cart}) => {
       <div className="flex flex-col items-center">
     
         <button className="text-red-500 hover:text-red-600 text-lg relative -top-10 -right-2">
-          <ImCross></ImCross>
+          <ImCross onClick={()=>handleRemove(cart.product_id)}></ImCross>
         </button>
       </div>
     </div>

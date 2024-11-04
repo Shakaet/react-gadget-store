@@ -9,25 +9,25 @@ const Specific = () => {
     const { id } = useParams();
     const data = useLoaderData();
 
-    // Find the gadget based on the ID
+ 
     const gadget = data.find(item => item.product_id === parseInt(id));
 
-    // State to track if the item has been added to the wishlist and cart
+
     const [isWishlisted, setIsWishlisted] = useState(false);
     const [isAddedToCart, setIsAddedToCart] = useState(false);
 
-    // Function to handle adding item to the wishlist
+ 
     const addToWishlist = () => {
         handleAddToWishlist(gadget.product_id);
-        setIsWishlisted(true); // Disable wishlist button after adding
-        toast.success("Item added to Wishlist!"); // Display wishlist message
+        setIsWishlisted(true); 
+        toast.success("Item added to Wishlist!");
     };
 
-    // Function to handle adding item to the cart
+    
     const addToCart = () => {
         handleAddToCart(gadget.product_id);
-        setIsAddedToCart(true); // Disable cart button after adding
-        toast.info("Item added to Cart!"); // Display cart message
+        setIsAddedToCart(true); 
+        toast.info("Item added to Cart!"); 
     };
 
     return (

@@ -52,8 +52,16 @@ let AddToLocalStorageW=(id)=>{
          let strItem=JSON.stringify(arrayItem)
          localStorage.setItem("WishList",strItem)
     }
+} 
+
+let RemoveFromLS=(id)=>{
+
+    let arrayItem= getItemFromLs()
+    let removeItem= arrayItem.filter(item=>item !== id)
+
+    localStorage.setItem("read",JSON.stringify(removeItem))
 }
 
 
 
-export {AddToLocalStorage,AddToLocalStorageW,getItemFromLs,getItemFromLsW}
+export {AddToLocalStorage,AddToLocalStorageW,getItemFromLs,getItemFromLsW,RemoveFromLS}

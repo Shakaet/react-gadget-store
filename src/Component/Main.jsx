@@ -11,22 +11,22 @@ const Main = () => {
 
     const handleAddToCart = (id) => {
         AddToLocalStorage(id);
-        setCartCount(getItemFromLs().length); // Update count after adding to localStorage
+        setCartCount(getItemFromLs().length); 
     };
 
     const handleAddToWishlist = (id) => {
         AddToLocalStorageW(id);
-        setWishlistCount(getItemFromLsW().length); // Update count after adding to localStorage
+        setWishlistCount(getItemFromLsW().length);
     };
 
     useEffect(() => {
-        // Sync with localStorage when component mounts or localStorage changes
+        
         setCartCount(getItemFromLs().length);
         setWishlistCount(getItemFromLsW().length);
     }, []);
 
 
-     // Reset cart and wishlist counts to 0
+   
      const resetCounts = () => {
         setCartCount(0);
         setWishlistCount(0);
