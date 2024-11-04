@@ -1,30 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import { getItemFromLs } from './AddToDb';
+import { getItemFromLs, getItemFromLsW } from './AddToDb';
 import Cart from './Cart';
-
+import Datawish from './Datawish'
+ 
 const Dashboard = () => {
 
     let [price,setPrice]=useState(0)
 
     let[data,setData ]=useState([])
 
+    let[wishList,setWishlist]=useState([])
+
     let Ls_data= useLoaderData()
     console.log(Ls_data)
 
     useEffect(()=>{
         let getLsData=getItemFromLs()
+        let getWishListData=getItemFromLsW()
 
         console.log(data,getLsData)
 
         let dataInt= getLsData.map(id=>parseInt(id))
+        let WishdataInt= getWishListData.map(id=>parseInt(id))
 
         console.log(typeof dataInt)
 
         let readBookList= Ls_data.filter(item=>dataInt.includes(item.product_id))
+        let readWishBookList= Ls_data.filter(item=>WishdataInt.includes(item.product_id))
 
         setData(readBookList)
+        setWishlist(readWishBookList)
     // eslint-disable-next-line react-hooks/exhaustive-deps
 
     // Calculate the total cost
@@ -85,7 +92,26 @@ const Dashboard = () => {
       }
     </TabPanel>
     <TabPanel>
-      <h2>Any content 2</h2>
+      <div>
+
+      <div className='flex justify-between items-center'>
+        <div className=''>
+
+            <h2 className='text-2xl font-bold'>Wishlist</h2>
+
+        </div>
+        <div className='flex gap-10 justify-center items-center'>
+        
+           
+
+        </div>
+      </div>
+
+      </div>
+
+      {
+        wishList.map(wish=><Datawish wish={wish}></Datawish>)
+      }
     </TabPanel>
   </Tabs>
 
