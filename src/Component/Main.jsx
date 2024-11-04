@@ -26,13 +26,20 @@ const Main = () => {
     }, []);
 
 
+     // Reset cart and wishlist counts to 0
+     const resetCounts = () => {
+        setCartCount(0);
+        setWishlistCount(0);
+    };
+
+
     
     
     return (
         <div className='overflow-x-hidden'>
 
             <NavBar cartCount={cartCount} wishlistCount={wishlistCount}></NavBar>
-            <Outlet context={{ handleAddToCart, handleAddToWishlist }} ></Outlet>
+            <Outlet context={{ handleAddToCart, handleAddToWishlist, resetCounts }} ></Outlet>
 
             <Footer></Footer>
 

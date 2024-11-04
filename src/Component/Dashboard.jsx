@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useOutletContext } from 'react-router-dom';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import { getItemFromLs, getItemFromLsW } from './AddToDb';
 import Cart from './Cart';
@@ -8,6 +8,7 @@ import Modal from './Modal';
  
 const Dashboard = () => {
     let [showModal, setShowModal] = useState(false); // Modal visibility state
+    const { resetCounts } = useOutletContext();
 
     let [price,setPrice]=useState(0)
 
@@ -56,8 +57,15 @@ const Dashboard = () => {
 
     return (
         <div>
-              {/* Modal */}
-              {showModal && <Modal onClose={() => setShowModal(false)} totalPrice={price} />}
+               {showModal && (
+                <Modal
+                    onClose={() => {
+                        setShowModal(false);
+                        resetCounts(); // Reset counts when modal is closed
+                    }}
+                    totalPrice={price}
+                />
+            )}
             
 
             <div className=''>
