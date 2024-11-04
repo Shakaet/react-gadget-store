@@ -5,6 +5,8 @@ https://celadon-toffee-2a4662.netlify.app/
 
 # Attach Requirement Document Link
 
+https://github.com/ProgrammingHero1/B10-A8-gadget-heaven
+
 # List of React Fundamental concepts used in the project
 
 1. Components: The project is divided into reusable components, such as product cards, modals, and navigation bars, to keep the code organized and modular.
