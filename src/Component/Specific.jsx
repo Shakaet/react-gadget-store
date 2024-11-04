@@ -79,7 +79,8 @@ const Specific = () => {
                         </div>
 
                         {/* Rating */}
-                        <div className="flex items-center mb-4">
+                        <p className='font-bold text-gray-800'>Rating </p>
+                        <div className="flex items-center mb-3">
                             <span className="text-yellow-500 text-lg mr-1">★★★★☆</span>
                             <span className="text-gray-600 text-sm ml-2 font-bold">{gadget.rating}</span>
                         </div>
