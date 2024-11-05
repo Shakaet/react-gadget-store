@@ -47,9 +47,14 @@ const Dashboard = () => {
     };
 
     const handlePurchase = () => {
-        setShowModal(true); 
-        setPrice(0); 
-        setData([]); 
+        setShowModal(true);
+    
+        localStorage.removeItem("read");
+        localStorage.removeItem("WishList");
+    
+        setData([]);
+        setWishlist([]);
+        setPrice(0);
     };
 
     const handleRemove = (id) => {
