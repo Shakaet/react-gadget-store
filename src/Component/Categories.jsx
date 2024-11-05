@@ -12,7 +12,7 @@ const Categories = ({category}) => {
 
 <div role="tablist" className="tabs tabs-lifted flex flex-col gap-5">
     <NavLink to={``} className={({ isActive }) =>
-            `tab text-2xl font-thin ${isActive ? 'tab-active text-yellow-500  btn-warning' : ''}`
+            `tab text-2xl font-thin mb-10 ${isActive ? 'tab-active text-yellow-500  btn-warning' : ''}`
           }>All</NavLink>
 {category.map(category => (
         <NavLink
@@ -20,7 +20,7 @@ const Categories = ({category}) => {
           to={`/category/${category.category}`}
           role='tab'
           className={({ isActive }) =>
-            `tab text-2xl font-thin ${isActive ? 'tab-active text-yellow-500 btn btn-warning' : ''}`
+            `tab text-2xl font-thin mb-10 ${isActive ? 'tab-active text-yellow-500 btn btn-warning' : ''}`
           }
         >
           {category.category}
